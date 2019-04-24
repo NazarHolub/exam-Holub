@@ -5,6 +5,7 @@ void EnterCredit(char num[], int size);
 bool Check(bool check, int size, char num[]);
 int Sum(int ptr[]);
 void Change(int arr[], char num[], int size);
+void Show(int arr[], int size);
 
 int main()
 {
@@ -72,3 +73,16 @@ void Change(int arr[], char num[], int size)
 	for (int i = 0; i < size; i++)
 		arr[i] = int(num[i]) - 48;
 }
+
+void Show(int arr[], int size)
+{
+	cout << "Your credit card: ";
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (i % 4 == 0)
+			cout << "  ";
+		cout << arr[i];
+	}
+	cout << endl;
+}
+
