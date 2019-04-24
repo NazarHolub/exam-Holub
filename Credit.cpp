@@ -2,6 +2,7 @@
 using namespace std;
 
 int Sum(int ptr[]);
+void EnterCredit(char num[], int size);
 
 int main()
 {
@@ -9,6 +10,7 @@ int main()
 	int arr[SIZE];
 	char num[SIZE];
 
+	EnterCredit(num, SIZE);
 	system("pause");
 	return 0;
 }
@@ -26,3 +28,22 @@ int Sum(int ptr[])
 	}
 	return sum;
 }
+
+void EnterCredit(char num[], int size)
+{
+	bool check = false;
+
+	do
+	{
+		cout << "Enter num of credit: ";
+		for (int i = 0; i < size, (num[i] = cin.get()) != '\n'; i++)
+			continue;
+
+		check = Check(check, size, num);
+
+		if (check == false)
+			cout << "Enter correct num.\n";
+
+	} while (check == false);
+}
+
