@@ -2,6 +2,7 @@
 using namespace std;
 
 void EnterCredit(char num[], int size);
+int Sum(int ptr[]);
 
 int main()
 {
@@ -13,7 +14,6 @@ int main()
 	system("pause");
 	return 0;
 }
-
 
 void EnterCredit(char num[], int size)
 {
@@ -35,3 +35,17 @@ void EnterCredit(char num[], int size)
 
 
 
+
+int Sum(int ptr[])
+{
+	int sum = 0;
+	for (int i = 15; i >= 0; i--)
+	{
+		if (i % 2 == 0)
+			sum += ptr[i];
+
+		if (i % 2 != 0)
+			sum += 2 * ptr[i];
+	}
+	return sum;
+}
