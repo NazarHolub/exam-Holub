@@ -2,6 +2,7 @@
 using namespace std;
 
 void EnterCredit(char num[], int size);
+bool Check(bool check, int size, char num[]);
 int Sum(int ptr[]);
 
 int main()
@@ -33,8 +34,22 @@ void EnterCredit(char num[], int size)
 	} while (check == false);
 }
 
-
-
+bool Check(bool check, int size, char num[])
+{
+	size -= 1;
+	
+	for (int i = 0; i < size; i++)
+	{
+	
+		if (num[i] < '0' || num[i] > '9')
+			break;
+		
+		if (i + 1 == size)
+			return true;
+			
+	}
+	return false;
+}
 
 int Sum(int ptr[])
 {
