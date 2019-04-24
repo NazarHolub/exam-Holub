@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+void Change(int arr[], char num[], int size);
 int Sum(int ptr[]);
 void EnterCredit(char num[], int size);
 
@@ -46,4 +47,10 @@ void EnterCredit(char num[], int size)
 
 	} while (check == false);
 }
+
+void Change(int arr[], char num[], int size)
+{
+	size -= 1;
+	for (int i = 0; i < size; i++)
+		arr[i] = int(num[i]) - 48;
 
