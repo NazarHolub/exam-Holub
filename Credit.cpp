@@ -4,6 +4,7 @@ using namespace std;
 void EnterCredit(char num[], int size);
 bool Check(bool check, int size, char num[]);
 int Sum(int ptr[]);
+void Change(int arr[], char num[], int size);
 
 int main()
 {
@@ -63,4 +64,11 @@ int Sum(int ptr[])
 			sum += 2 * ptr[i];
 	}
 	return sum;
+}
+
+void Change(int arr[], char num[], int size)
+{
+	size -= 1;
+	for (int i = 0; i < size; i++)
+		arr[i] = int(num[i]) - 48;
 }
