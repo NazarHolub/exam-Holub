@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
 
-void Change(int arr[], char num[], int size);
 int Sum(int ptr[]);
 void EnterCredit(char num[], int size);
+void Change(int arr[], char num[], int size);
+bool Check(bool check, int size, char num[]);
+void Show(int arr[], int size);
 void Valiable(int sum);
 
 int main()
@@ -18,6 +20,20 @@ int main()
 	Valiable(Sum(arr));
 	system("pause");
 	return 0;
+}
+
+int Sum(int ptr[])
+{
+	int sum = 0;
+	for (int i = 15; i >= 0; i--)
+	{
+		if (i % 2 == 0)
+			sum += ptr[i];
+
+		if (i % 2 != 0)
+			sum += 2 * ptr[i];
+	}
+	return sum;
 }
 
 void EnterCredit(char num[], int size)
@@ -62,18 +78,16 @@ bool Check(bool check, int size, char num[])
 	return false;
 }
 
-int Sum(int ptr[])
+void Show(int arr[], int size)
 {
-	int sum = 0;
-	for (int i = 15; i >= 0; i--)
+	cout << "Your credit card: ";
+	for (int i = 0; i < size - 1; i++)
 	{
-		if (i % 2 == 0)
-			sum += ptr[i];
-
-		if (i % 2 != 0)
-			sum += 2 * ptr[i];
+		if (i % 4 == 0)
+			cout << "  ";
+		cout << arr[i];
 	}
-	return sum;
+	cout << endl;
 }
 
 void Valiable(int sum)
